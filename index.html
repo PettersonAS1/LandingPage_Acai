@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Petter's açaí</title>
+</head>
+
+<body>
+    <section>
+
+        <header>
+            <a href="#"><img src="images/logo1.png" class="logo"></a>
+            <ul>
+                <li><a href="#">Home </a></li>
+                <li><a href="#">Menu </a></li>
+                <li><a href="#">Contato </a></li>
+                <li><a href="#">Sobre </a></li>
+            </ul>
+        </header>
+        <div class="content">
+            <div class="textBox">
+                <h2>Rico em fibras<br>Açaí <span>faz bem</span></h2>
+                <p>O açaí é uma fruta rica em sais minerais, possuindo, por exemplo, boas quantidades de ferro e de
+                    fósforo. Mas é o seu cálcio que reduz os transtornos das mulheres durante seu ciclo menstrual.</p>
+                <a href="#">Ler Mais</a>
+            </div>
+        </div>
+        <div class="imgBox">
+            <img src="images/img6.png" class="starbucks">
+        </div>
+        <div class="circulo"></div>
+        <ul class="thumb">
+            <li><img src="images/thumb10.png" onclick="imgSlider('images/img6.png');changeCircleColor('#ba55d3')"></li>
+            <li><img src="images/thumb20.png" onclick="imgSlider('images/img4.png');changeCircleColor('#c71585')"></li>
+            <li><img src="images/thumb30.png" onclick="imgSlider('images/img5.png');changeCircleColor('#da70d6')"></li>
+        </ul>
+        <ul class="sociais">
+            <li><a href="#"><img src="images/facebook.png"></a></li>
+            <li><a href="#"><img src="images/instagram.png"></a></li>
+            <li><a href="#"><img src="images/twitter.png"></a></li>
+        </ul>
+    </section>
+
+    <script type="text/javascript">
+        function imgSlider(anything) {
+            document.querySelector('.starbucks').src = anything;
+        }
+
+        function changeCircleColor(color) {
+            const circle = document.querySelector('.circulo');
+            circle.style.background = color;
+        }
+    </script>
+
+</body>
+
+</html>
