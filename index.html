@@ -5,15 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <title>Petter's açaí</title>
 </head>
 
 <body>
-    <section>
+    <div class="menu">
+        <ul class="navigation">
+            <li><a href="#">Home </a></li>
+            <li><a href="#">Menu </a></li>
+            <li><a href="#">Contato </a></li>
+            <li><a href="#">Sobre </a></li>
+        </ul>
+    </div>
+    <div>
+        <span class="material-icons menu-hamburguer"> menu
+        </span>
+    </div>
 
+    <section>
         <header>
             <a href="#"><img src="images/logo1.png" class="logo"></a>
-            <ul>
+
+            <ul class="navigation">
                 <li><a href="#">Home </a></li>
                 <li><a href="#">Menu </a></li>
                 <li><a href="#">Contato </a></li>
@@ -23,36 +40,65 @@
         <div class="content">
             <div class="textBox">
                 <h2>Rico em fibras<br>Açaí <span>faz bem</span></h2>
-                <p>O açaí é uma fruta rica em sais minerais, possuindo, por exemplo, boas quantidades de ferro e de
-                    fósforo. Mas é o seu cálcio que reduz os transtornos das mulheres durante seu ciclo menstrual.</p>
-                <a href="#">Ler Mais</a>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias impedit, sunt necessitatibus
+                    suscipit
+                    veritatis ipsa.
+                    Nesciunt quasi dolorem expedita illum necessitatibus neque cum!</p>
+                <a href="#">Menu</a>
             </div>
         </div>
-        <div class="imgBox">
-            <img src="images/img6.png" class="starbucks">
+        <div class="imgbox">
+            <img src="images/img10.png" class="colorRandom">
         </div>
         <div class="circulo"></div>
         <ul class="thumb">
-            <li><img src="images/thumb10.png" onclick="imgSlider('images/img6.png');changeCircleColor('#ba55d3')"></li>
-            <li><img src="images/thumb20.png" onclick="imgSlider('images/img4.png');changeCircleColor('#c71585')"></li>
-            <li><img src="images/thumb30.png" onclick="imgSlider('images/img5.png');changeCircleColor('#da70d6')"></li>
+            <li><img src="images/thumb30.png" onclick="imgSlider('./images/img10.png');changeCircleColor('#ba55d3')">
+            </li>
+            <li><img src="images/thumb20.png" onclick="imgSlider('images/img4.png');changeCircleColor('#c71585')">
+            </li>
+            <li><img src="images/thumb10.png" onclick="imgSlider('images/img8.png');changeCircleColor('#da70d6')">
+            </li>
         </ul>
         <ul class="sociais">
-            <li><a href="#"><img src="images/facebook.png"></a></li>
-            <li><a href="#"><img src="images/instagram.png"></a></li>
-            <li><a href="#"><img src="images/twitter.png"></a></li>
+            <li>
+                <a href="https://www.linkedin.com/in/petter-andre/" target="_blank">
+                    <img src="images/logotipo-do-linkedin.png" alt="Logotipo do Linkedin">
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/PettersonAS1/LandingPage_Acai" target="_blank">
+                    <img src="./images/github.png" alt="Repositorio do Projeto">
+                </a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/petter-andre/" target="_blank">
+                    <img src="images/twitter.png" alt="Logotipo do Twitter">
+                </a>
+            </li>
         </ul>
     </section>
 
     <script type="text/javascript">
         function imgSlider(anything) {
-            document.querySelector('.starbucks').src = anything;
+            document.querySelector('.colorRandom').src = anything;
         }
-
         function changeCircleColor(color) {
             const circle = document.querySelector('.circulo');
             circle.style.background = color;
         }
+        let btnMenu = document.querySelector(".menu-hamburguer")
+        let menu = document.querySelector(".menu")
+        function openMenu() {
+            menu.classList.toggle("open-menu")
+        }
+        btnMenu.addEventListener("click", openMenu)
+    </script>
+    <script type="text/javascript" src="./js/vanilla-tilt.js"></script>
+    <script>
+        VanillaTilt.init(document.querySelectorAll(".imgbox"), {
+            max: 25,
+            speed: 400,
+        });
     </script>
 
 </body>

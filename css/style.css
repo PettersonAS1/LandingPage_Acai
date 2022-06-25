@@ -9,15 +9,25 @@
     font-family: 'Poppins', sans-serif;
 }
 
+:root {
+    --primary-color: #800080;
+}
+
+html,
 body {
     overflow: hidden;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
 }
 
 section {
     position: relative;
     width: 100%;
-    min-height: 100vh;
-    padding: 100px;
+    height: 100vh;
+    padding: 100px 80px 100px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -33,10 +43,10 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: black;
 }
 
 header .logo {
-    position: relative;
     max-width: 80px;
 }
 
@@ -68,18 +78,19 @@ header ul li a {
 .content .textBox {
     position: relative;
     max-width: 600px;
+    z-index: 1;
 }
 
 .content .textBox h2 {
     color: #333;
-    font-size: 4em;
-    line-height: 1.4em;
+    font-size: 3.5em;
     font-weight: 400;
     margin-top: 10px;
+    line-height: 1;
 }
+
 .content .textBox h2 span {
-    color: #800080;
-    font-size: 1.2em;
+    color: var(--primary-color);
     font-weight: 900;
 }
 
@@ -89,9 +100,8 @@ header ul li a {
 
 .content .textBox a {
     display: inline-block;
-    margin-top: 20px;
-    padding: 8px 20px;
-    background: #800080;
+    padding: 8px 30px;
+    background: var(--primary-color);
     color: #fff;
     border-radius: 40px;
     font-weight: 500;
@@ -99,7 +109,7 @@ header ul li a {
     text-decoration: none;
 }
 
-.imgBox {
+.imgbox {
     z-index: 1;
     position: relative;
     width: 600px;
@@ -109,17 +119,48 @@ header ul li a {
     margin-top: 50px;
 }
 
-.imgBox img {
+.imgbox img {
     max-width: 300px;
 }
+
+.menu {
+    width: 100%;
+    background-color: white;
+    height: 100%;
+    position: absolute;
+    z-index: 10;
+    margin-left: -9000px;
+    transition: all 0.4s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-hamburguer {
+    cursor: pointer;
+    z-index: 11;
+    position: absolute;
+    padding: 20px;
+    font-size: 3em;
+    right: 20px
+}
+
+.open-menu {
+    margin-left: 0;
+}
+
 
 .thumb {
     position: absolute;
     left: 50%;
-    bottom: 20px;
+    bottom: 0;
     transform: translateX(-50%);
     display: flex;
 }
+.thumb ul{ 
+    margin-bottom: 0.5rem;
+}
+
 
 .thumb li {
     list-style: none;
@@ -146,6 +187,7 @@ header ul li a {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding: 0;
 }
 
 .sociais li {
@@ -161,7 +203,6 @@ header ul li a {
 
 .circulo {
     position: absolute;
-    top: 0;
     left: 0;
     width: 100%;
     height: 100%;
@@ -169,10 +210,141 @@ header ul li a {
     clip-path: circle(600px at right 800px);
 }
 
+.menu-hamburguer {
+    display: none;
+    opacity: 0;
+    z-index: 0;
+}
 
+@media (max-width: 990px) {
 
+    section {
+        padding: 80px 20px;
+    }
 
+    .menu-hamburguer {
+        z-index: 10;
+    }
 
+    header {
+        padding: 0;
+    }
 
+    header .logo {
+        max-width: 51px;
+    }
 
+    header ul {
+        display: none;
+    }
 
+    .toggle {
+        position: relative;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: 11;
+    }
+
+    .menu-hamburguer {
+        opacity: 100;
+    }
+}
+
+@media screen and (max-width: 940px) {
+    .content .textBox h2 {
+        font-size: 3rem;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .imgbox img {
+        max-width: 280px;
+    }
+    .thumb li img {
+        max-width: 55px;
+    }
+}
+
+@media screen and (max-width: 670px) {
+    .content .textBox {
+        max-width: 100%;
+    }
+    .content .textBox h2 {
+        font-size: 2.5rem;
+    }
+    .content .textBox p {
+        font-size: 1rem;
+    }
+    section {
+        display: flex;
+        flex-direction: column;
+    }
+    .content .textBox {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+    }
+    .sociais {
+        background-color: var(--primary-color);
+    }
+    .content .textBox h2 {
+        text-align: center;
+    }
+    .content .textBox p {
+        text-align: center;
+        margin-top: 15px;
+    }
+    .content .textBox a {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        margin: 0 20%;
+    }
+    .circulo {
+        clip-path: circle(40% at 50% 100%);
+    }
+    .imgbox {
+        margin: 40px 0 0 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+    }
+    .imgbox img {
+        position: absolute;
+        max-width: 230px;
+        display: flex;
+        bottom: 0px;
+    }
+    .thumb li img {
+        max-width: 50px;
+    }
+}
+
+/* @media screen and (max-width: 550px) {
+    .imgbox img {
+        max-width: 170px;
+    }
+} */
+
+@media screen and (max-width: 470px) {
+    .content .textBox p {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 470px) {
+    .content .textBox h2 {
+        font-size: 2.1rem;
+    }
+}
+
+@media screen and (max-width: 319px) {
+    .content .textBox p {
+        display: none;
+    }
+}
