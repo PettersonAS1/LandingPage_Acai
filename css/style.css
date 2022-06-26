@@ -149,7 +149,42 @@ header ul li a {
     font-size: 3em;
     right: 20px
 }
-
+/* ---------- */
+/* .text-animate{
+    display: inline-block;
+    border-right: 2px solid var(--primary-color);
+    padding-right: 3px;
+    animation: pisca normal infinite .8s, escrever normal 5s steps(55) both;
+    max-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+} */
+.text-animate::before{
+    content: '';
+    animation: animate infinite 10s;
+}
+@keyframes pisca {
+    100% {
+        border-right-color: transparent;
+    }
+}
+@keyframes escrever {
+    100% {
+        max-width: 100%;
+    }
+}
+@keyframes animate {
+    0% {
+        content: 'faz bem';
+    }
+    50% {
+        content: 'é gostoso';
+    }
+    100% {
+        content: 'é saboroso';
+    }
+}
+/* ---------- */
 .open-menu {
     margin-left: 0;
 }
@@ -210,7 +245,7 @@ header ul li a {
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--primary-color);
+    background: #ba55d3;
     clip-path: circle(600px at right 800px);
 }
 
@@ -221,6 +256,31 @@ header ul li a {
 }
 
 @media (max-width: 990px) {
+
+    .open-menu {
+        background-color: var(--primary-color);
+        height: 100vh;
+        width: 60vw;
+        border-top-right-radius: 80px;
+        border-bottom-right-radius: 80px;
+    }
+
+    ul.navigation {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        
+    }
+    ul.navigation a{
+        outline: none;
+        text-decoration: none;
+        font-size: 40px;
+        color: white;
+        font-weight: bold;
+    }
+
 
     section {
         padding: 80px 20px;
@@ -346,6 +406,9 @@ header ul li a {
 @media screen and (max-width: 470px) {
     .content .textbox h2 {
         font-size: 2.1rem;
+    }
+    .open-menu {
+        width: 80vw;
     }
 }
 
