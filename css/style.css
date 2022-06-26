@@ -75,13 +75,13 @@ header ul li a {
     align-items: center;
 }
 
-.content .textBox {
+.content .textbox {
     position: relative;
     max-width: 600px;
     z-index: 1;
 }
 
-.content .textBox h2 {
+.content .textbox h2 {
     color: #333;
     font-size: 3.5em;
     font-weight: 400;
@@ -89,16 +89,21 @@ header ul li a {
     line-height: 1;
 }
 
-.content .textBox h2 span {
+.content .textbox h2 span {
     color: var(--primary-color);
     font-weight: 900;
 }
 
-.content .textBox p {
+.dinamico {
+    color: var(--primary-color);
+    font-weight: 900;
+}
+
+.content .textbox p {
     color: #333;
 }
 
-.content .textBox a {
+.content .textbox a {
     display: inline-block;
     padding: 8px 30px;
     background: var(--primary-color);
@@ -149,7 +154,6 @@ header ul li a {
     margin-left: 0;
 }
 
-
 .thumb {
     position: absolute;
     left: 50%;
@@ -157,10 +161,10 @@ header ul li a {
     transform: translateX(-50%);
     display: flex;
 }
+
 .thumb ul{ 
     margin-bottom: 0.5rem;
 }
-
 
 .thumb li {
     list-style: none;
@@ -206,7 +210,7 @@ header ul li a {
     left: 0;
     width: 100%;
     height: 100%;
-    background: #9370db;
+    background: var(--primary-color);
     clip-path: circle(600px at right 800px);
 }
 
@@ -254,7 +258,7 @@ header ul li a {
 }
 
 @media screen and (max-width: 940px) {
-    .content .textBox h2 {
+    .content .textbox h2 {
         font-size: 3rem;
     }
 }
@@ -269,20 +273,20 @@ header ul li a {
 }
 
 @media screen and (max-width: 670px) {
-    .content .textBox {
+    .content .textbox {
         max-width: 100%;
     }
-    .content .textBox h2 {
+    .content .textbox h2 {
         font-size: 2.5rem;
     }
-    .content .textBox p {
+    .content .textbox p {
         font-size: 1rem;
     }
     section {
         display: flex;
         flex-direction: column;
     }
-    .content .textBox {
+    .content .textbox {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -290,16 +294,18 @@ header ul li a {
         width: 100%;
     }
     .sociais {
+        right: 1px;
+        border-radius: 15px;
         background-color: var(--primary-color);
     }
-    .content .textBox h2 {
+    .content .textbox h2 {
         text-align: center;
     }
-    .content .textBox p {
+    .content .textbox p {
         text-align: center;
         margin-top: 15px;
     }
-    .content .textBox a {
+    .content .textbox a {
         display: flex;
         text-align: center;
         justify-content: center;
@@ -332,19 +338,19 @@ header ul li a {
 } */
 
 @media screen and (max-width: 470px) {
-    .content .textBox p {
+    .content .textbox p {
         font-size: 0.8rem;
     }
 }
 
 @media screen and (max-width: 470px) {
-    .content .textBox h2 {
+    .content .textbox h2 {
         font-size: 2.1rem;
     }
 }
 
 @media screen and (max-width: 319px) {
-    .content .textBox p {
+    .content .textbox p {
         display: none;
     }
 }
